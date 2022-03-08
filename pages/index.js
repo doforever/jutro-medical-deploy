@@ -1,6 +1,7 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import { data } from '../data/data';
 
-export default function Home() {
+function Home({ sliderData}) {
   return (
     <div>
       <Head>
@@ -9,8 +10,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        Empty main container
+        {sliderData.map(({title}, i) => (
+          <div key={i}>{title}</div>
+        ))}
       </main>
     </div>
   )
 }
+
+export async function getStaticProps() {
+  return {
+    props: {
+      sliderData: data,
+    }
+  };
+}
+
+export default Home;
