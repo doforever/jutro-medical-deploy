@@ -18,6 +18,10 @@ module.exports = {
       'header': ['Poppins', 'sans-serif'],
       'body': ['Nunito Sans', 'sans-serif'],
     },
+    fontSize: {
+      '2xl': ['1.5rem', '30px'],
+      '5xl': ['3rem', '58px'],
+    }
   },
   plugins: [],
 }
