@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { data } from '../data/data';
+import Slider from '../components/Slider';
 
 function Home({ sliderData}) {
   return (
@@ -10,9 +11,7 @@ function Home({ sliderData}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {sliderData.map(({title}, i) => (
-          <div key={i}>{title}</div>
-        ))}
+        <Slider slides={sliderData}/>
       </main>
     </div>
   )
