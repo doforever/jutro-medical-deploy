@@ -3,20 +3,35 @@ import Pills from '../icons/Pills';
 import Talk from '../icons/Talk';
 import ArrowNext from '../icons/Arrow_next';
 import ArrowPrev from '../icons/Arrow_prev';
+import useMediaQuery from '../hooks/useMediaQuery';
 
-export default function Icon ({ name, size = 16, color = "#000" }) {
+export default function Icon ({ name, color, className }) {
+  let iconComponent;
+  const isSm = useMediaQuery('(min-width: 640px)');
+
   switch (name) {
     case 'download':
-      return <Download color={color}/>;
+      iconComponent = <Download color={color} sm={isSm}/>;
+      break;
     case 'pills':
-      return <Pills color={color}/>;
+      iconComponent = <Pills color={color} sm={isSm}/>;
+      break;
     case 'talk':
-      return <Talk color={color}/>;
+      iconComponent = <Talk color={color} sm={isSm}/>;
+      break;
     case 'arrow-next':
-      return <ArrowNext color={color}/>;
+      iconComponent = <ArrowNext color={color} sm={isSm}/>;
+      break;
     case 'arrow-prev':
-      return <ArrowPrev color={color}/>;
+      iconComponent = <ArrowPrev color={color} sm={isSm}/>;
+      break;
     default:
-      return null;
+      iconComponent = null;
   }
+
+  return (
+    <div className={className}>
+      {iconComponent}
+    </div>
+  );
 };
