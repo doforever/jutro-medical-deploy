@@ -11,7 +11,7 @@
 }
 
 @layer components {
-  .list__item {
+  .slider__item {
     @apply flex-col; 
     @apply lg:flex-row; 
     @apply flex; 
@@ -21,7 +21,10 @@
     @apply md:px-24;
     @apply py-14; 
     @apply md:py-16;
+    @apply lg:py-0;
     @apply justify-between; 
+    @apply lg:justify-center;
     @apply overflow-hidden;
+    @apply lg:items-center;
   }
 }

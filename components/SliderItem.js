@@ -2,14 +2,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Icon from './Icon';
 import clsx from 'clsx';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 export default function SliderItem({ title, text, cta, cta_link, icon, img, className, reverse }) {
   const color = className.includes('text-white') ? 'white' : '#333330';
   const btnBg = className.includes('bg-blue') ? 'bg-green' : 'bg-blue';
+  const isLg = useMediaQuery('(min-width: 1024px)');
 
   return (
-    <div className={clsx('list__item', className, reverse && 'flex-col-reverse')}>
-      <div className='lg:flex-1'>
+    <div className={clsx('slider__item', className, reverse && !isLg && 'flex-col-reverse')}>
+      <div className='lg:flex-1 lg:max-w-[700px]'>
         <Icon className='mb-14' name={icon} color={color} />
         <h1 className='font-header text-2xl sm:text-5xl mb-6'>{title}</h1>
         <p className='sm:text-2xl mb-6'>{text}</p>
@@ -19,7 +21,7 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
           </Link>
         </div>
       </div>
-      <div className={clsx('lg:flex-1', reverse ? '-translate-y-16' : 'translate-y-16')}>
+      <div className={clsx('lg:flex-1 lg:max-w-[700px] lg:translate-x-20', !isLg && (reverse ? '-translate-y-16' : 'translate-y-16'))}>
         <Image src={img} alt={`${title} picture`} width={700} height={806} />
       </div>
     </div>
