@@ -9,7 +9,7 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
 
   return (
     <div className={clsx('list__item', className, reverse && 'flex-col-reverse')}>
-      <div className='md:flex-1'>
+      <div className='lg:flex-1'>
         <Icon className='mb-14' name={icon} color={color} />
         <h1 className='font-header text-2xl sm:text-5xl mb-6'>{title}</h1>
         <p className='sm:text-2xl mb-6'>{text}</p>
@@ -19,7 +19,7 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
           </Link>
         </div>
       </div>
-      <div className={clsx('md:flex-1', reverse ? '-translate-y-16' : 'translate-y-16')}>
+      <div className={clsx('lg:flex-1', reverse ? '-translate-y-16' : 'translate-y-16')}>
         <Image src={img} alt={`${title} picture`} width={700} height={806} />
       </div>
     </div>

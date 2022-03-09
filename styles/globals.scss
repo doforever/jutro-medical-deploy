@@ -13,10 +13,10 @@
 @layer components {
   .list__item {
     @apply flex-col; 
-    @apply md:flex-row; 
+    @apply lg:flex-row; 
     @apply flex; 
     @apply h-screen; 
-    @apply md:h-fit; 
+    @apply lg:h-fit; 
     @apply px-12; 
     @apply py-14; 
     @apply justify-between; 

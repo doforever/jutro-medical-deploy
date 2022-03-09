@@ -1,6 +1,6 @@
-export default function Download ({color, sm}) {
+export default function Download ({color, md}) {
   return (
-    <svg width={sm ? "70" : "42"} height={sm ? "132" : "70"} viewBox="0 0 75 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={md ? "70" : "42"} height={md ? "132" : "70"} viewBox="0 0 75 137" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M72.407 112.472H3.04297" stroke={color} strokeWidth="4.40998" strokeMiterlimit="10" strokeLinecap="round"/>
     <path d="M29.1732 123.32H48.518" stroke={color} strokeWidth="4.40998" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
     <path d="M37.7088 2.62152V81.7362" stroke={color} strokeWidth="4.40998" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
