@@ -14,6 +14,10 @@ module.exports = {
       'rose': '#FABFBA',
       'grey': '#333330',
     },
+    fontFamily: {
+      'header': ['Poppins', 'sans-serif'],
+      'body': ['Nunito Sans', 'sans-serif'],
+    },
   },
   plugins: [],
 }

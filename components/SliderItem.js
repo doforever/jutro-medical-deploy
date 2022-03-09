@@ -10,8 +10,8 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
       <div className='flex-1 flex flex-col justify-between'>
         <Icon className='mb-14' name={icon} color={color}/>
         <div className='flex-1 flex flex-col justify-between'>
-          <h1>{title}</h1>
-          <p>{text}</p>
+          <h1 className='font-header'>{title}</h1>
+          <p className='sm:text-2xl'>{text}</p>
           <Link href={cta_link}>
             <a>{cta}</a>
           </Link>
