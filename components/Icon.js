@@ -5,7 +5,7 @@ import ArrowNext from '../icons/Arrow_next';
 import ArrowPrev from '../icons/Arrow_prev';
 import useMediaQuery from '../hooks/useMediaQuery';
 
-export default function Icon ({ name, color, className }) {
+export default function Icon({ name, color = '#333330', className }) {
   let iconComponent;
   const isSm = useMediaQuery('(min-width: 640px)');
 

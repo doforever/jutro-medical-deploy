@@ -1,5 +1,6 @@
 import SliderItem from './SliderItem';
 import { useState } from 'react';
+import clsx from 'clsx';
 
 export default function Slider ({slides}) {
   const [current, setCurrent] = useState(0);
@@ -9,7 +10,7 @@ export default function Slider ({slides}) {
   return (
     <div>
       {slides.map((item, i) => (
-        <SliderItem key={i} className={classes[i]} {...item}/>
+        <SliderItem key={i} className={clsx(classes[i])} reverse={i % 2 === 1} {...item}/>
       ))}
     </div>
   );

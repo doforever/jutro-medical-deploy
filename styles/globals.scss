@@ -6,5 +6,20 @@
 @layer base {
   html {
     font-family: 'Nunito Sans', sans-serif;
+    @apply text-grey;
+  }
+}
+
+@layer components {
+  .list__item {
+    @apply flex-col; 
+    @apply md:flex-row; 
+    @apply flex; 
+    @apply h-screen; 
+    @apply md:h-fit; 
+    @apply px-12; 
+    @apply py-14; 
+    @apply justify-between; 
+    @apply overflow-hidden;
   }
 }
