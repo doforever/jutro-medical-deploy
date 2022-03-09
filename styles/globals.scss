@@ -18,7 +18,9 @@
     @apply h-screen; 
     @apply lg:h-fit; 
     @apply px-12; 
+    @apply md:px-24;
     @apply py-14; 
+    @apply md:py-16;
     @apply justify-between; 
     @apply overflow-hidden;
   }
