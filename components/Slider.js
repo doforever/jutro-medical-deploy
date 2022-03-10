@@ -37,6 +37,7 @@ export default function Slider({ slides }) {
             i === current && next !== null && 'opacity-0'
           )}
           reverse={i % 2 === 1} 
+          beforeEnter={(i !== current && i !== next) || i == current && next !== null }
           goBack={goBack}
           goForward={goForward}
         />

@@ -4,7 +4,7 @@ import Icon from './Icon';
 import clsx from 'clsx';
 import useMediaQuery from '../hooks/useMediaQuery';
 
-export default function SliderItem({ title, text, cta, cta_link, icon, img, className, reverse, goBack, goForward }) {
+export default function SliderItem({ title, text, cta, cta_link, icon, img, className, reverse, goBack, goForward, beforeEnter }) {
   const textColor = className.includes('text-white') ? 'white' : '#333330';
   const btnBg = className.includes('bg-blue') ? 'bg-green' : 'bg-blue';
   const isLg = useMediaQuery('(min-width: 1024px)');
@@ -20,7 +20,7 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
           color={textColor}
         />
       </button>
-      <div className='lg:flex-1 lg:max-w-[700px] lg:pl-10'>
+      <div className={clsx('lg:flex-1 lg:max-w-[700px] lg:pl-10 transition-all', beforeEnter && 'translate-y-full')}>
         <Icon className='mb-14' name={icon} color={textColor} />
         <h1 className='font-header text-2xl sm:text-5xl mb-6'>{title}</h1>
         <p className='sm:text-2xl mb-6'>{text}</p>
@@ -30,7 +30,10 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
           </Link>
         </div>
       </div>
-      <div className={clsx('lg:flex-1 lg:max-w-[700px]', reverse ? '-translate-y-16 lg:translate-y-0' : 'translate-y-16 lg:translate-y-2')}>
+      <div className={clsx('lg:flex-1 lg:max-w-[700px] transition-all', 
+        reverse ? '-translate-y-16 lg:translate-y-0' : 'translate-y-16 lg:translate-y-2',
+        beforeEnter && '-translate-y-full'
+        )}>
         <Image src={img} alt={`${title} picture`} width={700} height={806} />
       </div>
       <button
