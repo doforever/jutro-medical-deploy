@@ -1,8 +1,8 @@
-import Download from '../icons/Download';
-import Pills from '../icons/Pills';
-import Talk from '../icons/Talk';
-import ArrowNext from '../icons/Arrow_next';
-import ArrowPrev from '../icons/Arrow_prev';
+import Download from './icons/Download';
+import Pills from './icons/Pills';
+import Talk from './icons/Talk';
+import ArrowNext from './icons/Arrow_next';
+import ArrowPrev from './icons/Arrow_prev';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 export default function Icon({ name, color = '#333330', className }) {
