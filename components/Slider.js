@@ -17,19 +17,23 @@ export default function Slider({ slides }) {
   useEffect(() => {
     if (next !== null) { 
       setTimeout(() => {
-        setCurrent(next);
-      }, 200);
+        setCurrent((next));
+      }, 1000);
     }
   }, [next]);
 
   const classes = ['bg-green text-white', 'bg-blue text-white', 'bg-rose'];
 
   return (
-    <div>
+    <div className='relative'>
       {slides.map((item, i) => (
         <SliderItem
           key={i}
-          className={clsx(classes[i % 3], i !== current && 'hidden opacity-0')}
+          className={clsx(classes[i % 3], 
+            i !== current && i !== next && 'opacity-0 absolute top-0 left-0 w-100 h-100 -z-10',
+            i === next && i !== current && 'opacity-100 absolute top-0 left-0 w-full h-100',
+            i === current && i !== next && next !== null && 'opacity-0'
+          )}
           reverse={i % 2 === 1} {...item}
           goBack={goBack}
           goForward={goForward}

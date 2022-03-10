@@ -28,5 +28,7 @@
     @apply overflow-hidden;
     @apply lg:items-center;
     @apply relative;
+    @apply transition-opacity;
+    @apply duration-1000;
   }
 }
