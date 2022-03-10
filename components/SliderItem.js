@@ -21,7 +21,7 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
           </Link>
         </div>
       </div>
-      <div className={clsx('lg:flex-1 lg:max-w-[700px] lg:translate-x-20', !isLg && (reverse ? '-translate-y-16' : 'translate-y-16'))}>
+      <div className={clsx('lg:flex-1 lg:max-w-[700px] lg:translate-x-20', reverse ? '-translate-y-16 lg:translate-y-0' : 'translate-y-16 lg:translate-y-2')}>
         <Image src={img} alt={`${title} picture`} width={700} height={806} />
       </div>
     </div>

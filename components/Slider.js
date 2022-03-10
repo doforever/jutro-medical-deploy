@@ -10,7 +10,7 @@ export default function Slider ({slides}) {
   return (
     <div>
       {slides.map((item, i) => (
-        <SliderItem key={i} className={clsx(classes[i])} reverse={i % 2 === 1} {...item}/>
+        <SliderItem key={i} className={clsx(classes[i % 3])} reverse={i % 2 === 1} {...item}/>
       ))}
     </div>
   );
