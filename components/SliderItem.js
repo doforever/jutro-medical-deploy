@@ -21,7 +21,7 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
         />
       </button>
       <div className={clsx('lg:flex-1 lg:max-w-[700px] lg:pl-10 transition-all duration-1000', 
-        (isChangingOrder || reverse) && 'translate-y-full'
+        (isChangingOrder || reverse) && 'translate-y-full lg:translate-y-0'
         )}>
         <Icon className='mb-14' name={icon} color={textColor} />
         <h1 className='font-header text-2xl sm:text-5xl mb-6'>{title}</h1>
@@ -33,8 +33,7 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
         </div>
       </div>
       <div className={clsx('lg:flex-1 lg:max-w-[700px] transition-all duration-1000',
-        reverse ? '-translate-y-16 lg:translate-y-0' : 'translate-y-16 lg:translate-y-2',
-        isChangingOrder || reverse && '-translate-y-full'
+        isChangingOrder || reverse ? '-translate-y-full lg:-translate-y-2' : 'translate-y-16 lg:translate-y-2',
         )}>
         <Image src={img} alt={`${title} picture`} width={700} height={806} />
       </div>
