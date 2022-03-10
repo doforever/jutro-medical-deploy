@@ -23,6 +23,7 @@ export default function Slider({ slides }) {
     }
   }, [next]);
 
+  const isChangingOrder = next !== null && next % 2 !== current % 2;
   const classes = ['bg-green text-white', 'bg-blue text-white', 'bg-rose'];
 
   return (
@@ -36,10 +37,10 @@ export default function Slider({ slides }) {
             i === next && 'opacity-100 absolute top-0 left-0 w-full h-100',
             i === current && next !== null && 'opacity-0'
           )}
-          reverse={i % 2 === 1} 
-          beforeEnter={(i !== current && i !== next) || i == current && next !== null }
+          reverse={ i % 2 === 1}
           goBack={goBack}
           goForward={goForward}
+          isChangingOrder={isChangingOrder}
         />
       ))}
     </div>

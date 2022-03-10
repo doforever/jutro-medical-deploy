@@ -4,13 +4,13 @@ import Icon from './Icon';
 import clsx from 'clsx';
 import useMediaQuery from '../hooks/useMediaQuery';
 
-export default function SliderItem({ title, text, cta, cta_link, icon, img, className, reverse, goBack, goForward, beforeEnter }) {
+export default function SliderItem({ title, text, cta, cta_link, icon, img, className, reverse, goBack, goForward, isChangingOrder }) {
   const textColor = className.includes('text-white') ? 'white' : '#333330';
   const btnBg = className.includes('bg-blue') ? 'bg-green' : 'bg-blue';
   const isLg = useMediaQuery('(min-width: 1024px)');
 
   return (
-    <div className={clsx('slider__item', className, reverse && !isLg && 'flex-col-reverse')}>
+    <div className={clsx('slider__item', className)}>
       <button
         onClick={goBack}
         className='absolute top-1/2 -translate-y-1/2 left-3 md:left-10 lg:static lg:w-3 flex-initial lg:translate-y-0'
@@ -20,7 +20,9 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
           color={textColor}
         />
       </button>
-      <div className={clsx('lg:flex-1 lg:max-w-[700px] lg:pl-10 transition-all', beforeEnter && 'translate-y-full')}>
+      <div className={clsx('lg:flex-1 lg:max-w-[700px] lg:pl-10 transition-all duration-1000', 
+        (isChangingOrder || reverse) && 'translate-y-full'
+        )}>
         <Icon className='mb-14' name={icon} color={textColor} />
         <h1 className='font-header text-2xl sm:text-5xl mb-6'>{title}</h1>
         <p className='sm:text-2xl mb-6'>{text}</p>
@@ -30,9 +32,9 @@ export default function SliderItem({ title, text, cta, cta_link, icon, img, clas
           </Link>
         </div>
       </div>
-      <div className={clsx('lg:flex-1 lg:max-w-[700px] transition-all', 
+      <div className={clsx('lg:flex-1 lg:max-w-[700px] transition-all duration-1000',
         reverse ? '-translate-y-16 lg:translate-y-0' : 'translate-y-16 lg:translate-y-2',
-        beforeEnter && '-translate-y-full'
+        isChangingOrder || reverse && '-translate-y-full'
         )}>
         <Image src={img} alt={`${title} picture`} width={700} height={806} />
       </div>
